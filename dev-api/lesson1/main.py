@@ -15,6 +15,7 @@ def print_weather(site_url):
         print('Прогноз недоступен')
 
 
-for city in cities:
-    url = f'http://wttr.dvmn.org/{city}?nTqm'
-    print_weather(url)
+if __name__ == '__main__':
+    for city in cities:
+        url = f'http://wttr.dvmn.org/{city}?nTqm'
+        print_weather(url)
