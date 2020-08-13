@@ -2,12 +2,12 @@ import requests
 from requests.exceptions import HTTPError
 
 
-cities = ['Лондон', 'Череповец', 'Шереметьево']
-payload = {"lang": "ru"}
+CITIES = ['Лондон', 'Череповец', 'Шереметьево']
+PAYLOAD = {"lang": "ru"}
 
 
 def print_weather(site_url):
-    response = requests.get(site_url, params=payload)
+    response = requests.get(site_url, params=PAYLOAD)
     try:
         response.raise_for_status()
         print(response.text)
@@ -16,6 +16,6 @@ def print_weather(site_url):
 
 
 if __name__ == '__main__':
-    for city in cities:
+    for city in CITIES:
         url = f'http://wttr.dvmn.org/{city}?nTqm'
         print_weather(url)
