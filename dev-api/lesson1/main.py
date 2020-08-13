@@ -10,8 +10,7 @@ def print_weather(site_url):
     response = requests.get(site_url, params=PAYLOAD)
     try:
         response.raise_for_status()
-        print(response.url)
-        # print(response.text)
+        print(response.text)
     except HTTPError:
         print('Прогноз недоступен')
 
